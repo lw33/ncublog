@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wangEditor demo</title>
+    <script src="jquery.mini.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <form action="sys.action" method="post" id="form">
+    
+    <script type="text/javascript" src="wangEditor.min.js"></script>
+	<div id="div1">
+		<p>欢迎使用 wangEditor 富文本编辑器</p>
+	</div>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#div1')
+    editor.customConfig.uploadImgShowBase64 = true   // 使用 base64 保存图片
+    editor.create()
+</script>
+
+</body>
+</html>

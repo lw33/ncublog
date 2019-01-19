@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.ncu.ncublog.dao.UserDao">
+    <sql id="table">`user`</sql>
+    <update id="updateUser">
+
+        update
+        <include refid="table"/>
+
+        set
+
+        <if test="name != null">
+            `name`=#{user.name},
+        </if>
+
+
+        <if test="password != null">
+            `password`=#{password}, salt=#{salt},
+        </if>
+
+        <if test="headUrl != null">
+            `head_url`=#{headUrl},
+        </if>
+
+        <if test="birth != null">
+            birth=#{birth},
+        </if>
+
+        <if test="vocation != null">
+            `vocation`=#{vocation},
+        </if>
+
+        <if test="introduction != null">
+            `introduction`=#{introduction},
+        </if>
+
+        gender=#{gender}
+
+        where id=#{id}
+
+    </update>
+</mapper>
